@@ -8,7 +8,7 @@ VSTS release task for creating azure storage container with a defined public acc
 2. Add the task to your release by clicking in your release on add a task and select the Utility category. Click the Add button on the Azure Storage Container task.
  
 3. Configure the task. 
- ![alt tag](https://github.com/carlosjdelgado/AzureStorageContainer/Screenshots/readme-image.png)
+ ![alt tag](https://github.com/carlosjdelgado/AzureStorageContainer/blob/master/Screenshots/readme-image.png)
 - Select an AzureRM subscription.
 - Select the storage account where you want to create the container
 - Select a name for the new container
