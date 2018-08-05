@@ -11,7 +11,7 @@ VSTS release task for creating azure storage container with a defined public acc
  ![alt tag](https://github.com/carlosjdelgado/AzureStorageContainer/blob/master/Screenshots/readme-image.png)
 - Select an AzureRM subscription.
 - Select the storage account where you want to create the container
-- Select a name for the new container
+- Set a name for the new container
 - Select a public access level for the container. Default level is Off but you can set public access for blob or set public access for blob and container.
 
 4. When you run the release, the storage container will be created.
