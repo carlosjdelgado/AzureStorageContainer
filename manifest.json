@@ -1,0 +1,57 @@
+{
+    "manifestVersion": 1,
+    "id": "cc987470-973e-11e8-9d81-056301492f56",
+    "version": "0.1.0",
+    "name": "Azure Storage Container",
+    "publisher": "CarlosJimenezDelgado",
+    "public": true,
+    "description": "Task for creating azure storage container with a defined public access level inside an existing storage account",
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "Azure",
+        "Storage",
+        "Container"
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        },
+        "license": {
+            "path": "LICENSE"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/carlosjdelgado/AzureStorageContainer"
+        },
+        "support": {
+            "uri": "https://github.com/carlosjdelgado/AzureStorageContainer"
+        }
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "branding": {
+        "color": "rgb(36, 43, 50)",
+        "theme": "dark"
+    },
+    "icons": {
+        "default": "icon-large.png"
+    },
+    "contributions": [
+        {
+          "id": "AzureStorageContainer",
+          "type": "ms.vss-distributed-task.task",
+          "targets": [
+            "ms.vss-distributed-task.tasks"
+          ],
+          "properties": {
+            "name": "AzureStorageContainer"
+          }
+        }
+      ]    
+}
