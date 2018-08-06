@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "name": "Azure Storage Container",
     "publisher": "CarlosJimenezDelgado",
-    "public": false,
+    "public": true,
     "description": "Task for creating azure storage container with a defined public access level inside an existing storage account",
     "categories": [
         "Build and release"
