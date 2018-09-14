@@ -32,7 +32,10 @@
       "label": "Storage Name",
       "defaultValue": "",
       "required": true,
-      "helpMarkDown": "Name of the storage where to create container"
+      "helpMarkDown": "Name of the storage where to create container",
+      "properties": {
+        "EditableOptions": "True"
+      }
     },
     {
       "name": "ContainerName",
