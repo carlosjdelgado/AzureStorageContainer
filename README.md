@@ -1,3 +1,4 @@
+[![Build status](https://dev.azure.com/CarlosJDelgadoOS/carlosjdelgado/_apis/build/status/carlosjdelgado.AzureStorageContainer)](https://dev.azure.com/CarlosJDelgadoOS/carlosjdelgado/_build/latest?definitionId=2)
 # Azure Storage Container
 VSTS release task for creating azure storage container with a defined public access level inside an existing storage account.
 
