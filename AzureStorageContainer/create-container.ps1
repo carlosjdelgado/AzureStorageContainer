@@ -34,7 +34,6 @@ try
     $StorageContext = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
     
     Write-Verbose "Checking if task should be skipped when Container $ContainerName exists..."
-    $ContinueOnExistence = Get-VstsInput -Name ContinueOnExistence
     Write-Verbose "Task will be skipped: $ContinueOnExistence"
     
     Write-Verbose "Checking if Container $ContainerName exists in storage $StorageName..."
