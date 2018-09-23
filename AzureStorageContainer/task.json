@@ -57,7 +57,14 @@
         "Blob": "Blob read access",
         "Off": "No read access"
       }
-
+    },
+    {
+      "name": "ContinueOnExistence",
+      "type": "boolean",
+      "label": "Continue on container existence",
+      "defaultValue": false,
+      "required": true,
+      "helpMarkDown": "Skip the task when container exists"
     }
   ],
   "dataSourceBindings": [

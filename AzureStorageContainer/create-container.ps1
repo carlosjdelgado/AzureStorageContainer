@@ -11,7 +11,10 @@ param
     $ContainerName,
 
     [string] [Parameter(Mandatory = $true)]
-    $ContainerPublicAccessLevel
+    $ContainerPublicAccessLevel,
+
+    [string] [Parameter(Mandatory = $true)]
+    $ContinueOnExistence
 )
 
 import-module "Microsoft.TeamFoundation.DistributedTask.Task.Internal"
@@ -29,10 +32,25 @@ try
     
     Write-Verbose "Getting Storage context..."
     $StorageContext = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
+    
+    Write-Verbose "Checking if task should be skipped when Container $ContainerName exists..."
+    $ContinueOnExistence = Get-VstsInput -Name ContinueOnExistence
+    Write-Verbose "Task will be skipped: $ContinueOnExistence"
+    
+    Write-Verbose "Checking if Container $ContainerName exists in storage $StorageName..."
+    $TestContainer = Get-AzureStorageContainer -Context $StorageContext | Where-Object { $_.Name -eq $ContainerName }
+    Write-Verbose "Container found: $ContainerName"
 
-    Write-Host "Creating container $ContainerName in storage account $StorageName"
-    New-AzureStorageContainer -Name $ContainerName -Context $StorageContext -Permission $ContainerPublicAccessLevel -ErrorAction Stop
-    Write-Host "Succesfully created container $ContainerName in storage account $StorageName"
+    if ($ContinueOnExistence -eq $true -and $TestContainer -ne $null)
+    {
+        Write-Host "Container $ContainerName already exists in storage account $StorageName"
+    }
+    else
+    {
+        Write-Host "Creating container $ContainerName in storage $StorageName"
+        New-AzureStorageContainer -Name $ContainerName -Context $StorageContext -Permission $ContainerPublicAccessLevel -ErrorAction Stop
+        Write-Host "Succesfully created container $ContainerName in storage account $StorageName"
+    }
 }
 catch 
 {
