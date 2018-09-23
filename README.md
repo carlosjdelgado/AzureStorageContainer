@@ -14,5 +14,6 @@ VSTS release task for creating azure storage container with a defined public acc
 - Select the storage account where you want to create the container
 - Set a name for the new container
 - Select a public access level for the container. Default level is Off but you can set public access for blob or set public access for blob and container.
+- Set if release have to continue when container exists, this is useful if you want to create the container in the first release of a pipeline.
 
 4. When you run the release, the storage container will be created.
